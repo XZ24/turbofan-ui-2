@@ -43,6 +43,7 @@ const menuGroups = [
         route: "#",
         children: [
           { label: "eCommerce", route: "/" },
+          { label: "RUL-Predict", route: "/rul-predict" },
         ],
       },
       {
