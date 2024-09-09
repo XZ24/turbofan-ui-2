@@ -9,16 +9,22 @@ import DataStatsOne from "@/components/DataStats/DataStatsOne";
 import ChartOne from "@/components/Charts/ChartOne";
 
 import SettingBoxes_E from "@/components/SettingBoxes_E";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-
-
+import RUL from "@/components/Charts/RUL";
+import TemperatureStat from "@/components/DataStats/TemperatureStat";
 
 const ECommerce: React.FC = () => {
   return (
     <>
-      
-      <SettingBoxes_E />
-      <DataStatsOne />
+      {/* <SettingBoxes_E /> */}
+      <div className="mb-7 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-1 2xl:gap-7.5">
+        <ChartOne />
+        {/* <RUL/> */}
+        {/* <ChartThree /> */}
+   
+      </div>
+
+      <TemperatureStat />
+      {/* <DataStatsOne /> */}
       
       <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-9 2xl:gap-7.5">
         <ChartOne />

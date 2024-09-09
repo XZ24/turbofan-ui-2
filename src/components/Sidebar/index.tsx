@@ -42,8 +42,12 @@ const menuGroups = [
         label: "Dashboard",
         route: "#",
         children: [
-          { label: "eCommerce", route: "/" },
-          { label: "RUL-Predict", route: "/rul-predict" },
+          { label: "RUL-Predict-3", route: "/rul-predict-3" },
+          { label: "RUL-Predict-2", route: "/rul-predict-2" },
+          // { label: "RUL-Predict-1", route: "/rul-predict-1" },
+          // { label: "RUL-Predict", route: "/rul-predict" },
+          // { label: "eCommerce", route: "/" },
+          
         ],
       },
       {

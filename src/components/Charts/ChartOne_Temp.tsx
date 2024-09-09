@@ -3,22 +3,34 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
 
-const ChartOne: React.FC = () => {
+// 定义 props 接口
+interface ChartOneRULProps {
+  cycles: number[]; // 传入的 cycles
+  HPC_Temperature_percycle: number[]; // 传入的 HPC 温度
+  LPT_Temperature_percycle: number[]; // 传入的 LPT 温度
+}
+
+const ChartOne_Rest: React.FC<ChartOneRULProps> = ({
+  cycles,
+  HPC_Temperature_percycle,
+  LPT_Temperature_percycle,
+}) => {
+  // 定义 series 数据
   const series = [
     {
-      name: "Received Amount",
-      data: [0, 20, 35, 45, 35, 55, 65, 50, 65, 75, 60, 75],
+      name: "HPC Temperature",
+      data: HPC_Temperature_percycle, // 使用传入的 HPC 温度
     },
     {
-      name: "Due Amount",
-      data: [15, 9, 17, 32, 25, 68, 80, 68, 84, 94, 74, 62],
+      name: "LPT Temperature",
+      data: LPT_Temperature_percycle, // 使用传入的 LPT 温度
     },
-    
   ];
 
+  // 定义图表 options
   const options: ApexOptions = {
     legend: {
-      show: false,
+      show: true,
       position: "top",
       horizontalAlign: "left",
     },
@@ -87,7 +99,7 @@ const ChartOne: React.FC = () => {
       },
       y: {
         title: {
-          formatter: function (e) {
+          formatter: function () {
             return "";
           },
         },
@@ -98,20 +110,7 @@ const ChartOne: React.FC = () => {
     },
     xaxis: {
       type: "category",
-      categories: [
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-      ],
+      categories: cycles, // 使用传入的 cycles 数据
       axisBorder: {
         show: false,
       },
@@ -129,11 +128,11 @@ const ChartOne: React.FC = () => {
   };
 
   return (
-    <div className="col-span-12 rounded-[10px] bg-white px-7.5 pb-6 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-7">
+    <div className="col-span-12 rounded-[10px] bg-white px-7.5 pb-6 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-6">
       <div className="mb-3.5 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
-            Payments Overview
+            Temperature Overview
           </h4>
         </div>
         <div className="flex items-center gap-2.5">
@@ -153,23 +152,8 @@ const ChartOne: React.FC = () => {
           />
         </div>
       </div>
-
-      <div className="flex flex-col gap-2 text-center xsm:flex-row xsm:gap-0">
-        <div className="border-stroke dark:border-dark-3 xsm:w-1/2 xsm:border-r">
-          <p className="font-medium">Received Amount</p>
-          <h4 className="mt-1 text-xl font-bold text-dark dark:text-white">
-            $45,070.00
-          </h4>
-        </div>
-        <div className="xsm:w-1/2">
-          <p className="font-medium">Due Amount</p>
-          <h4 className="mt-1 text-xl font-bold text-dark dark:text-white">
-            $32,400.00
-          </h4>
-        </div>
-      </div>
     </div>
   );
 };
 
-export default ChartOne;
+export default ChartOne_Rest;

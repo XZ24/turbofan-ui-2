@@ -11,7 +11,7 @@ interface SettingBoxesProps {
   onPredict: (predictionValue: number) => void;
 }
 
-const SettingBoxes_E_close: React.FC<SettingBoxesProps> = ({ parameterValues, parameterNames, updateParameterValue, updateArrayValue, onPredict }) => {
+const SettingBoxes_E: React.FC<SettingBoxesProps> = ({ parameterValues, parameterNames, updateParameterValue, updateArrayValue, onPredict }) => {
   
   // 使用 FileReader 读取 CSV 文件并解析
   const handleCSVUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -103,12 +103,12 @@ const SettingBoxes_E_close: React.FC<SettingBoxesProps> = ({ parameterValues, pa
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-6 pb-10">
+      <div className="grid grid-cols-12 gap-6 pb-5">
         <div className="col-span-12">
           <div className="rounded-[10px] border border-stroke bg-white shadow-1 dark:border-dark-3 dark:bg-gray-dark dark:shadow-card">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-12">
-                <div className="border-b border-stroke px-7 py-4 dark:border-dark-3">
+                <div className=" border-stroke px-7 py-4 dark:border-dark-3">
                   <div className="flex justify-between items-center">
                     <div className="flex justify-between items-center gap-10">
                       <h3 className="font-medium text-dark dark:text-white">
@@ -137,19 +137,7 @@ const SettingBoxes_E_close: React.FC<SettingBoxesProps> = ({ parameterValues, pa
                 </div>
               </div>
 
-              {/* 渲染每个Parameter，传递名称和值 */}
-              {parameterValues && parameterNames && parameterValues.length === parameterNames.length ? (
-                parameterValues.map((value, index) => (
-                  <Parameter
-                    key={index}
-                    name={parameterNames[index]} // 传递名称
-                    value={value}
-                    onChange={(newValue) => updateParameterValue(index, newValue)}
-                  />
-                ))
-              ) : (
-                <p className="text-red-500">参数值和名称长度不匹配或数据未加载</p>
-              )}
+              
             </div>
           </div>
         </div>
@@ -158,4 +146,4 @@ const SettingBoxes_E_close: React.FC<SettingBoxesProps> = ({ parameterValues, pa
   );
 };
 
-export default SettingBoxes_E_close;
+export default SettingBoxes_E;

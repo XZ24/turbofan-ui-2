@@ -3,17 +3,18 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import DefaultSelectOption from "@/components/SelectOption/DefaultSelectOption";
 
-const ChartOne: React.FC = () => {
+// 定义组件的 props 接口，包含 cycles 和 RUL_percycle
+interface ChartOneRULProps {
+  cycles: number[];
+  RUL_percycle: number[];
+}
+
+const ChartOne_RUL: React.FC<ChartOneRULProps> = ({ cycles, RUL_percycle }) => {
   const series = [
     {
-      name: "Received Amount",
-      data: [0, 20, 35, 45, 35, 55, 65, 50, 65, 75, 60, 75],
+      name: "Remaining Useful Life (RUL)",
+      data: RUL_percycle,
     },
-    {
-      name: "Due Amount",
-      data: [15, 9, 17, 32, 25, 68, 80, 68, 84, 94, 74, 62],
-    },
-    
   ];
 
   const options: ApexOptions = {
@@ -98,20 +99,7 @@ const ChartOne: React.FC = () => {
     },
     xaxis: {
       type: "category",
-      categories: [
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-      ],
+      categories: cycles, // 使用外部传入的 cycles
       axisBorder: {
         show: false,
       },
@@ -133,7 +121,7 @@ const ChartOne: React.FC = () => {
       <div className="mb-3.5 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h4 className="text-body-2xlg font-bold text-dark dark:text-white">
-            Payments Overview
+            Remaining Useful Life Overview
           </h4>
         </div>
         <div className="flex items-center gap-2.5">
@@ -172,4 +160,4 @@ const ChartOne: React.FC = () => {
   );
 };
 
-export default ChartOne;
+export default ChartOne_RUL;
