@@ -83,7 +83,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           </div>
         </div>
         {/* Green block */}
-        {parameterValues[lpcOutletIndex] >= 100 && parameterValues[lpcOutletIndex] <= 200 && (
+        {parameterValues[lpcOutletIndex] >= 642.325 && parameterValues[lpcOutletIndex] <= 643.00 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
@@ -94,7 +94,9 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Yellow block */}
-        {parameterValues[lpcOutletIndex] >= 201 && parameterValues[lpcOutletIndex] <= 300 && (
+        { ((parameterValues[lpcOutletIndex] >= 641.21 && parameterValues[lpcOutletIndex] < 642.325) 
+          || (parameterValues[lpcOutletIndex] > 643.00 && parameterValues[lpcOutletIndex] <= 644.53) )
+        && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
@@ -105,7 +107,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Red block */}
-        {parameterValues[lpcOutletIndex] >= 301 && (
+        {(parameterValues[lpcOutletIndex] > 644.53 || parameterValues[lpcOutletIndex] < 641.21) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
@@ -127,7 +129,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           </div>
         </div>
         {/* Green block */}
-        {parameterValues[hpcOutletIndex] >= 100 && parameterValues[hpcOutletIndex] <= 200 && (
+        {parameterValues[hpcOutletIndex] >= 1586.26 && parameterValues[hpcOutletIndex] <= 1594.38 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
@@ -138,7 +140,8 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Yellow block */}
-        {parameterValues[hpcOutletIndex] >= 201 && parameterValues[hpcOutletIndex] <= 300 && (
+        {((parameterValues[hpcOutletIndex] >= 201 && parameterValues[hpcOutletIndex] <= 300) 
+        || (parameterValues[hpcOutletIndex] >= 201 && parameterValues[hpcOutletIndex] <= 300) ) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
