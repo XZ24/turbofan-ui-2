@@ -43,7 +43,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                Fan Inlet Temperature is Optimal
               </h5>
             </div>
           </div>
@@ -54,7 +54,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                Fan Inlet Temperature Warning
               </h5>
             </div>
           </div>
@@ -65,7 +65,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                Fan Inlet Temperature Critical
               </h5>
             </div>
           </div>
@@ -87,7 +87,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                LPC Outlet Temperature is Optimal
               </h5>
             </div>
           </div>
@@ -100,18 +100,18 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                LPC Outlet Temperature Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {(parameterValues[lpcOutletIndex] > 644.53 || parameterValues[lpcOutletIndex] < 641.21) && (
+        {(parameterValues[lpcOutletIndex] < 641.21 || parameterValues[lpcOutletIndex] > 644.53) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                LPC Outlet Temperature Critical
               </h5>
             </div>
           </div>
@@ -133,30 +133,30 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                HPC Outlet Temperature is Optimal
               </h5>
             </div>
           </div>
         )}
 
         {/* Yellow block */}
-        {((parameterValues[hpcOutletIndex] >= 201 && parameterValues[hpcOutletIndex] <= 300) 
-        || (parameterValues[hpcOutletIndex] >= 201 && parameterValues[hpcOutletIndex] <= 300) ) && (
+        {((parameterValues[hpcOutletIndex] >= 1571.04 && parameterValues[hpcOutletIndex] < 1586.26) 
+        || (parameterValues[hpcOutletIndex] > 1594.38 && parameterValues[hpcOutletIndex] <= 1616.91) ) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                HPC Outlet Temperature Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {parameterValues[hpcOutletIndex] >= 301 && (
+        {(parameterValues[hpcOutletIndex] < 1571.04 || parameterValues[hpcOutletIndex] > 1616.91) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                HPC Outlet Temperature Critical
               </h5>
             </div>
           </div>
@@ -176,33 +176,35 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[lptOutletIndex] >= 100 && parameterValues[lptOutletIndex] <= 200 && (
+        {parameterValues[lptOutletIndex] >= 1402.36 && parameterValues[lptOutletIndex] <= 1414.554 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                LPT Outlet Temperature is Optimal
               </h5>
             </div>
           </div>
         )}
 
         {/* Yellow block */}
-        {parameterValues[lptOutletIndex] >= 201 && parameterValues[lptOutletIndex] <= 300 && (
+        {((parameterValues[lptOutletIndex] >= 1382.25 && parameterValues[lptOutletIndex] < 1402.36) 
+        ||(parameterValues[lptOutletIndex] > 1414.554 && parameterValues[lptOutletIndex] <= 1441.49)
+      ) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                LPT Outlet Temperature Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {parameterValues[lptOutletIndex] >= 301 && (
+        {(parameterValues[lptOutletIndex] < 1382.25 || parameterValues[lptOutletIndex] > 1441.49) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                LPT Outlet Temperature Critical
               </h5>
             </div>
           </div>

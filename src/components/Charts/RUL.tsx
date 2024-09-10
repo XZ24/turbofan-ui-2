@@ -73,6 +73,24 @@ const RUL: React.FC<RULProps> = ({ customValue }) => {
     ],
   };
 
+  // 根据 customValue 动态设置颜色和提示信息
+  let borderColor = "#22ad5c"; // green
+  let bgColor = "bg-green-light-7"; // green background
+  let textColor = "#34d399"; // green text
+  let message = "Your Engine Still Very Healthy";
+
+  if (customValue <= 20) {
+    borderColor = "#BC1C21"; // red
+    bgColor = "bg-red-light-5"; // red background
+    textColor = "#BC1C21"; // red text
+    message = "Your Engine is in Critical Condition";
+  } else if (customValue > 20 && customValue <= 50) {
+    borderColor = "#FFB800"; // yellow
+    bgColor = "bg-[#FEF5DE]"; // yellow background
+    textColor = "#D0915C"; // yellow text
+    message = "Your Engine Needs Attention Soon";
+  }
+
   return (
     <div className="col-span-12 rounded-[10px] bg-white px-7.5 pb-7 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-5">
       <div className="mb-9 justify-between gap-4 sm:flex">
@@ -93,10 +111,11 @@ const RUL: React.FC<RULProps> = ({ customValue }) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
+      {/* 动态颜色和消息 */}
+      <div className={`flex items-center justify-center w-full h-auto rounded-[10px] border-l-6 ${bgColor} px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30`} style={{ borderColor }}>
         <div className="w-full">
-          <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-            Your Engine Still Very Healthy
+          <h5 className="text-body-sm font-bold leading-[18px]" style={{ color: textColor }}>
+            {message}
           </h5>
           <p className="text-body-sm text-[#637381]">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.

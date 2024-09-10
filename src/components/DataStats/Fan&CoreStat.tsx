@@ -41,33 +41,35 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 100 && parameterValues[hpcAirFlowIndex] <= 200 && (
+        {parameterValues[hpcAirFlowIndex] >= 2388.05 && parameterValues[hpcAirFlowIndex] <= 2388.14 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                Fan Speed is Optimal
               </h5>
             </div>
           </div>
         )}
 
         {/* Yellow block */}
-        {parameterValues[hpcAirFlowIndex] >= 50 && parameterValues[hpcAirFlowIndex] <= 300 && (
+        {((parameterValues[hpcAirFlowIndex] >= 2387.9 && parameterValues[hpcAirFlowIndex] < 2388.05)
+        ||(parameterValues[hpcAirFlowIndex] > 2388.14 && parameterValues[hpcAirFlowIndex] <= 2388.56))
+         && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                Fan Speed Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] >= 301 || parameterValues[hpcAirFlowIndex] <=30) && (
+        {(parameterValues[hpcAirFlowIndex] < 2387.9 || parameterValues[hpcAirFlowIndex] > 2388.56) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                Fan Speed Critical
               </h5>
             </div>
           </div>
@@ -87,33 +89,34 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 100 && parameterValues[hpcAirFlowIndex] <= 200 && (
+        {parameterValues[hpcAirFlowIndex] >= 9053.1 && parameterValues[hpcAirFlowIndex] <= 9069.42 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                Core Speed is Optimal
               </h5>
             </div>
           </div>
         )}
 
         {/* Yellow block */}
-        {parameterValues[hpcAirFlowIndex] >= 50 && parameterValues[hpcAirFlowIndex] <= 300 && (
+        {((parameterValues[hpcAirFlowIndex] >= 9021.73 && parameterValues[hpcAirFlowIndex] < 9053.1)
+        ||(parameterValues[hpcAirFlowIndex] > 9069.42 && parameterValues[hpcAirFlowIndex] <= 9244.59)) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                Core Speed Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] >= 301 || parameterValues[hpcAirFlowIndex] <=30) && (
+        {(parameterValues[hpcAirFlowIndex] < 9021.73 || parameterValues[hpcAirFlowIndex] > 9244.59) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                Core Speed Critical
               </h5>
             </div>
           </div>
@@ -133,33 +136,34 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 100 && parameterValues[hpcAirFlowIndex] <= 200 && (
+        {parameterValues[hpcAirFlowIndex] >= 38.7 && parameterValues[hpcAirFlowIndex] <= 38.95 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                HPC Air Flow is Optimal
               </h5>
             </div>
           </div>
         )}
 
         {/* Yellow block */}
-        {parameterValues[hpcAirFlowIndex] >= 50 && parameterValues[hpcAirFlowIndex] <= 300 && (
+        {((parameterValues[hpcAirFlowIndex] >= 38.14 && parameterValues[hpcAirFlowIndex] < 38.7)
+        ||(parameterValues[hpcAirFlowIndex] > 38.95 && parameterValues[hpcAirFlowIndex] <= 39.43)) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                HPC Air Flow Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] >= 301 || parameterValues[hpcAirFlowIndex] <=30) && (
+        {(parameterValues[hpcAirFlowIndex] < 38.14 || parameterValues[hpcAirFlowIndex] > 39.43) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                HPC Air Flow Critical
               </h5>
             </div>
           </div>
@@ -179,33 +183,34 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 100 && parameterValues[hpcAirFlowIndex] <= 200 && (
+        {parameterValues[hpcAirFlowIndex] >= 23.2218 && parameterValues[hpcAirFlowIndex] <= 23.3668 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
-                Test
+                LPC Air Flow is Optimal
               </h5>
             </div>
           </div>
         )}
 
         {/* Yellow block */}
-        {parameterValues[hpcAirFlowIndex] >= 50 && parameterValues[hpcAirFlowIndex] <= 300 && (
+        {((parameterValues[hpcAirFlowIndex] >= 22.8942 && parameterValues[hpcAirFlowIndex] < 23.2218)
+        || (parameterValues[hpcAirFlowIndex] > 23.3668 && parameterValues[hpcAirFlowIndex] <= 23.6184)) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
-                Test
+                LPC Air Flow Warning
               </h5>
             </div>
           </div>
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] >= 301 || parameterValues[hpcAirFlowIndex] <=30) && (
+        {(parameterValues[hpcAirFlowIndex] < 22.8942 || parameterValues[hpcAirFlowIndex] > 23.6184) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
-                Test
+                LPC Air Flow Critical
               </h5>
             </div>
           </div>
