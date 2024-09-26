@@ -42,6 +42,7 @@ const menuGroups = [
         label: "Dashboard",
         route: "#",
         children: [
+          { label: "Simulation", route: "/rul-predict-4" },
           { label: "RUL-Predict-3", route: "/rul-predict-3" },
           { label: "RUL-Predict-2", route: "/rul-predict-2" },
           // { label: "RUL-Predict-1", route: "/rul-predict-1" },

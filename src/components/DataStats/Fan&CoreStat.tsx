@@ -41,7 +41,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 2388.05 && parameterValues[hpcAirFlowIndex] <= 2388.14 && (
+        {parameterValues[fanSpeedIndex] >= 2388.05 && parameterValues[fanSpeedIndex] <= 2388.14 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
@@ -52,8 +52,8 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Yellow block */}
-        {((parameterValues[hpcAirFlowIndex] >= 2387.9 && parameterValues[hpcAirFlowIndex] < 2388.05)
-        ||(parameterValues[hpcAirFlowIndex] > 2388.14 && parameterValues[hpcAirFlowIndex] <= 2388.56))
+        {((parameterValues[fanSpeedIndex] >= 2387.9 && parameterValues[fanSpeedIndex] < 2388.05)
+        ||(parameterValues[fanSpeedIndex] > 2388.14 && parameterValues[fanSpeedIndex] <= 2388.56))
          && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
@@ -65,7 +65,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] < 2387.9 || parameterValues[hpcAirFlowIndex] > 2388.56) && (
+        {(parameterValues[fanSpeedIndex] < 2387.9 || parameterValues[fanSpeedIndex] > 2388.56) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
@@ -89,7 +89,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 9053.1 && parameterValues[hpcAirFlowIndex] <= 9069.42 && (
+        {parameterValues[coreSpeedIndex] >= 9053.1 && parameterValues[coreSpeedIndex] <= 9069.42 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
@@ -100,8 +100,8 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Yellow block */}
-        {((parameterValues[hpcAirFlowIndex] >= 9021.73 && parameterValues[hpcAirFlowIndex] < 9053.1)
-        ||(parameterValues[hpcAirFlowIndex] > 9069.42 && parameterValues[hpcAirFlowIndex] <= 9244.59)) && (
+        {((parameterValues[coreSpeedIndex] >= 9021.73 && parameterValues[coreSpeedIndex] < 9053.1)
+        ||(parameterValues[coreSpeedIndex] > 9069.42 && parameterValues[coreSpeedIndex] <= 9244.59)) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
@@ -112,7 +112,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] < 9021.73 || parameterValues[hpcAirFlowIndex] > 9244.59) && (
+        {(parameterValues[coreSpeedIndex] < 9021.73 || parameterValues[coreSpeedIndex] > 9244.59) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
@@ -183,7 +183,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         </div>
 
         {/* Green block */}
-        {parameterValues[hpcAirFlowIndex] >= 23.2218 && parameterValues[hpcAirFlowIndex] <= 23.3668 && (
+        {parameterValues[lpcAirFlowIndex] >= 23.2218 && parameterValues[lpcAirFlowIndex] <= 23.3668 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
@@ -194,8 +194,8 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Yellow block */}
-        {((parameterValues[hpcAirFlowIndex] >= 22.8942 && parameterValues[hpcAirFlowIndex] < 23.2218)
-        || (parameterValues[hpcAirFlowIndex] > 23.3668 && parameterValues[hpcAirFlowIndex] <= 23.6184)) && (
+        {((parameterValues[lpcAirFlowIndex] >= 22.8942 && parameterValues[lpcAirFlowIndex] < 23.2218)
+        || (parameterValues[lpcAirFlowIndex] > 23.3668 && parameterValues[lpcAirFlowIndex] <= 23.6184)) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#FFB800] bg-[#FEF5DE] px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#D0915C]">
@@ -206,7 +206,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Red block */}
-        {(parameterValues[hpcAirFlowIndex] < 22.8942 || parameterValues[hpcAirFlowIndex] > 23.6184) && (
+        {(parameterValues[lpcAirFlowIndex] < 22.8942 || parameterValues[lpcAirFlowIndex] > 23.6184) && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">

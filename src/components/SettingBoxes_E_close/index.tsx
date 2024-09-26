@@ -11,7 +11,7 @@ interface SettingBoxesProps {
   onPredict: (predictionValue: number) => void;
 }
 
-const SettingBoxes_E: React.FC<SettingBoxesProps> = ({ parameterValues, parameterNames, updateParameterValue, updateArrayValue, onPredict }) => {
+const SettingBoxes_E_close: React.FC<SettingBoxesProps> = ({ parameterValues, parameterNames, updateParameterValue, updateArrayValue, onPredict }) => {
   
   // 使用 FileReader 读取 CSV 文件并解析
   const handleCSVUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,6 +58,15 @@ const SettingBoxes_E: React.FC<SettingBoxesProps> = ({ parameterValues, paramete
           updateArrayValue("High_pressure_turbines", High_pressure_turbines);
           updateArrayValue("Low_pressure_turbines", Low_pressure_turbines);
           updateArrayValue("RUL_percycle", RUL_percycle);
+
+          const lastRow = rows[rows.length - 2]; // 取倒数第二行，倒数第一行为空行
+          const lastRowValues = lastRow.split(",").slice(0, 25).map(Number); // 提取前25列并转换为数值
+          console.log("Last row values for parameter update: ", lastRowValues);
+
+          // 更新 parameterValues
+          lastRowValues.forEach((value, index) => {
+            updateParameterValue(index, value); // 更新每个参数
+          });
   
         } else {
           console.error("CSV文件没有足够的行数据！");
@@ -146,4 +155,4 @@ const SettingBoxes_E: React.FC<SettingBoxesProps> = ({ parameterValues, paramete
   );
 };
 
-export default SettingBoxes_E;
+export default SettingBoxes_E_close;

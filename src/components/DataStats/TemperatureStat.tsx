@@ -39,7 +39,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
           </div>
         </div>
         {/* Green block */}
-        {parameterValues[fanInletIndex] >= 100 && parameterValues[fanInletIndex] <= 200 && (
+        {parameterValues[fanInletIndex] >= 510 && parameterValues[fanInletIndex] <= 520 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-green bg-green-light-7 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#004434] dark:text-[#34D399]">
@@ -61,7 +61,7 @@ const TemperatureStat: React.FC<TemperatureStatProps> = ({
         )}
 
         {/* Red block */}
-        {parameterValues[fanInletIndex] >= 301 && (
+        {parameterValues[fanInletIndex] >= 530 && (
           <div className="flex items-center justify-center mt-5 w-full h-auto rounded-[10px] border-l-6 border-[#BC1C21] bg-red-light-5 px-7.5 py-2.5 dark:bg-[#1B1B24] dark:bg-opacity-30">
             <div className="w-full">
               <h5 className="text-body-sm font-bold leading-[18px] text-[#BC1C21] dark:text-[#BC1C21]">
