@@ -9,7 +9,9 @@ interface RULProps {
 }
 
 const RUL: React.FC<RULProps> = ({ customValue }) => {
-  const series = [65, 0, 0, 11];
+  const adjustedValue = customValue > 100 ? 100 : customValue;
+  const series = [adjustedValue, 0, 0, 100 - adjustedValue];
+
 
   // 如果 customValue 改变，可以通过 key 强制刷新图表
   const chartKey = `chart-${customValue}`; // 当 customValue 改变时，key 也会随之改变
@@ -39,7 +41,7 @@ const RUL: React.FC<RULProps> = ({ customValue }) => {
               label: "",
               fontSize: "12px",
               fontWeight: "400",
-              formatter: () => `${customValue}`, // 使用传递过来的 customValue
+              formatter: () => customValue > 100 ? '100+' : `${customValue}`, // 使用传递过来的 customValue
             },
             value: {
               show: true,
